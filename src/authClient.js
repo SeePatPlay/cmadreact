@@ -3,7 +3,7 @@ import { AUTH_LOGIN, AUTH_LOGOUT, AUTH_ERROR ,AUTH_CHECK, AUTH_GET_PERMISSIONS} 
 export default (type, params) => {
     if (type === AUTH_LOGIN) {
         const { username, password } = params;
-        const request = new Request('http://104.197.178.172:8080/cmad_app/api/auth/signin', {
+        const request = new Request('http://ec2-54-218-74-131.us-west-2.compute.amazonaws.com:32768/cmad_app/api/auth/signin', {
             method: 'POST',
             body: JSON.stringify({ username, password }),
             headers: new Headers({ 'Content-Type': 'application/json' }),
