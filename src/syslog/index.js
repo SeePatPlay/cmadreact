@@ -16,6 +16,7 @@ import {
     Toolbar,
     ToolbarGroup,
     FlatButton,
+    FunctionField,
     ChevronLeft,ChevronRight
 } from 'admin-on-rest';
 
@@ -57,7 +58,7 @@ class SyslogList extends React.Component {
             <Datagrid options={{ fixedHeader: true, height: 400 }}>
                 
                 <TextField source="source" title="User ID"/>
-                <TextField source="timestamp" />
+                <FunctionField  render={record => {return  new Date(Number(`${record.timestamp}`*1000)).toLocaleString()}} label="Recieved Time" sortable={false}/>
                 <TextField source="description" />
                 <TextField source="event_type" />
                 
